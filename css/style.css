@@ -1,0 +1,42 @@
+header{
+    background-color: blue;
+}
+#barra{
+    background-color: rgba(182, 114, 32, 0.836);
+    width: 200;
+    height: 400;
+}
+#barranav{
+    background-color: blue !important;
+    color: black;
+    font-weight: bold;
+}
+.logo {
+    padding-top: 3px;
+    display: flex;
+    border-radius: 100%;
+    text-decoration: none;
+    line-height: 60px;
+    padding-bottom: 3px;
+}   
+body{
+    background-color: rgba(0, 0, 0, 0.911);
+    color: aliceblue;
+    text-align: center;
+}
+img{
+    border-radius: 10px;
+}
+.luces{
+    overflow: hidden;
+    text-align: center;
+    border-bottom: 10px;
+    padding-bottom: 10px;
+}
+.luces:hover{
+    background-color: rgb(40, 40, 196);
+    box-shadow: 0 0 5px rgb(31, 31, 204),
+                0 0 25px rgb(17, 17, 223),
+                0 0 50px rgb(17, 17, 223),
+                0 0 200px rgb(17, 17, 223),
+}
