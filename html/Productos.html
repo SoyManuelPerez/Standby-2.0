@@ -112,7 +112,7 @@
                         </div>
                         <br>
                         <div>
-                            <input type="submit" value="Guardar">
+                            <button id="btncuardar" type="submit" class="btn btn-primary">Guardar</button>
                         </div>
                         <br>
                 </form>
@@ -123,13 +123,13 @@
         <table id="productos" class="table table-dark" style="width: 100%;">
                 <thead>
                 <tr>
-                    <th>Producto</th>
-                    <th>Precio</th>
-                    <th>Tipo</th>
-                    <th>Accion</th>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Opciones</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="contenido">
             </tbody>
         </table>
     </div>

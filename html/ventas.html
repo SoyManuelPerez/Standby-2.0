@@ -75,24 +75,20 @@
 <br>
 <h2>Listado de ventas</h2>
 <div class="container" >
-    <table id="Ventas" class="table table-dark" >
-            <thead>
-            <tr>
-                <th>Producto</th>
-                <th>Precio</th>
-                <th>Fecha</th>
-                <th>Accion</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Tinto</td>
-                <td>2000</td>
-                <td>12/10/2023</td>
-                <td>61</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="container" >
+        <table id="ventas" class="table table-dark" style="width: 100%;">
+                <thead>
+                <tr>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Fecha</th>
+                </tr>
+            </thead>
+            <tbody id="contenido">
+            </tbody>
+        </table>
+    </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
