@@ -2,17 +2,17 @@ $(document).ready( function () {
     $('#productos').DataTable();
 } )
 let Productos = JSON.parse(localStorage.getItem("inventario")) || [];
-let Cuenta = JSON.parse(localStorage.getItem("Cuenta")) || [];
+let Cuenta = JSON.parse(localStorage.getItem("CuentaBD")) || [];
 let Registro = JSON.parse(localStorage.getItem("Registro")) || [];
-let Suma = JSON.parse(localStorage.getItem("Suma")) || [];
-let contador = JSON.parse(localStorage.getItem("contador")) || [];
+let Suma = JSON.parse(localStorage.getItem("SumaBD")) || [];
+let contador = JSON.parse(localStorage.getItem("contadorBD")) || [];
 const contenido = document.querySelector("#contenido");
 const contenidoC = document.querySelector("#contenidoC");
 const contenidosuma = document.querySelector("#contenidosuma");
-if(parseInt(localStorage.getItem("Suma"))!=1||Cuenta==[]){
+if(parseInt(localStorage.getItem("SumaBD"))!=1||Cuenta==[]){
     let ini = 0
 Suma.push(ini)
-localStorage.setItem("Suma",Suma)}
+localStorage.setItem("SumaBD",Suma)}
 
 
 function mostar() {
@@ -50,7 +50,7 @@ function mostar2() {
     contenidoC. innerHTML = html;
 }
 function mostar3() {
-    let total = parseInt(localStorage.getItem("contador"))
+    let total = parseInt(localStorage.getItem("contadorBD"))
     console.log()
     let html  = "";
         html += `
@@ -62,25 +62,25 @@ function mostar3() {
     contenidosuma. innerHTML = html;
 }
 function sumatoria(precio){
-    if (parseInt(localStorage.getItem("Suma"))==0){let sumatoria =[]
+    if (parseInt(localStorage.getItem("SumaBD"))==0){let sumatoria =[]
         sumatoria.push(precio)
-        localStorage.setItem("contador",sumatoria)
+        localStorage.setItem("contadorBD",sumatoria)
         ini=1
-        localStorage.removeItem("Suma")
+        localStorage.removeItem("SumaBD")
         let sum=[]
         sum.push(ini)
-        localStorage.setItem("Suma",sum)
+        localStorage.setItem("SumaBD",sum)
         }
-        else if(parseInt(localStorage.getItem("Suma"))==1){
-            let con = parseInt(localStorage.getItem("contador")) 
+        else if(parseInt(localStorage.getItem("SumaBD"))==1){
+            let con = parseInt(localStorage.getItem("contadorBD")) 
             let total= con + precio
-            localStorage.setItem("contador",total)
+            localStorage.setItem("contadorBD",total)
         }
 }
 function resta(valor){
-            let con = parseInt(localStorage.getItem("contador"))
+            let con = parseInt(localStorage.getItem("contadorBD"))
             let total= con - valor
-            localStorage.setItem("contador",total)
+            localStorage.setItem("contadorBD",total)
             mostar3()
 }
 contenido.addEventListener("click", (e) => {
@@ -94,7 +94,7 @@ contenido.addEventListener("click", (e) => {
         const tipo = Prod.tipo
         const formUser = { id: crypto.randomUUID(),Producto, Precio, tipo };
         Cuenta.push(formUser);
-        localStorage.setItem("Cuenta", JSON.stringify(Cuenta));
+        localStorage.setItem("CuentaBD", JSON.stringify(Cuenta));
         mostar();
         mostar2()
         mostar3()
@@ -114,7 +114,7 @@ contenidoC.addEventListener("click", (e) => {
         mostar();
         mostar2()
         mostar3()
-        localStorage.setItem("Cuenta", JSON.stringify(Cuenta));
+        localStorage.setItem("CuentaBD", JSON.stringify(Cuenta));
     }
     if (e.target.classList.contains("btn-success")) {
         const id = e.target.parentElement.id;
@@ -134,7 +134,7 @@ contenidoC.addEventListener("click", (e) => {
         localStorage.setItem("Registro", JSON.stringify(Registro));
         const newArray = Cuenta.filter((Cuenta) => Cuenta.id !== id);
         Cuenta = newArray;
-        localStorage.setItem("Cuenta", JSON.stringify(Cuenta));
+        localStorage.setItem("CuentaBD", JSON.stringify(Cuenta));
         mostar();
         mostar2()
     }
@@ -142,4 +142,3 @@ contenidoC.addEventListener("click", (e) => {
 mostar();
 mostar2()
 mostar3()
-
